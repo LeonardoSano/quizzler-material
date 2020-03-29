@@ -35,9 +35,22 @@ class QuizBrain{
   void nextQuestion(){
     if (_questionNumber < _questions.length - 1) {
       _questionNumber++;
-    } else {
-      _questionNumber = 0;
     }
+    //else {
+    //  _questionNumber = 0;
+    //}
+  }
+
+  int getQuestionNumber(){
+    return _questionNumber;
+  }
+
+  void setQuestionNumber(int n){
+    _questionNumber = n;
+  }
+
+  int getQuizLength(){
+    return _questions.length;
   }
 
   String getQuestionText(){
@@ -46,6 +59,18 @@ class QuizBrain{
 
   bool getQuestionAnswer(){
     return _questions[_questionNumber].questionAnswer;
+  }
+
+  void reset(){
+    _questionNumber = 0;
+  }
+
+  bool isFinished(){
+    if(_questionNumber==_questions.length -1 ){
+      return true;
+    }else{
+      return false;
+    }
   }
 
 }
